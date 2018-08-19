@@ -1,0 +1,245 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <link rel="stylesheet" href="css/index.css"/>
+    <link rel="stylesheet" href="css/icon.css"/>
+    <link rel="stylesheet" href="css/header.css"/>
+    <link rel="stylesheet" href="css/cards.css"/>
+    <link rel="stylesheet" href="css/info.css"/>
+    <link rel="stylesheet" href="css/content.css"/>
+    <link rel="stylesheet" href="css/scripts.css"/>
+    <link rel="stylesheet" href="css/main.css"/>
+    <link rel="stylesheet" href="css/devices.css"/>
+    <link rel="stylesheet" href="css/plan.css"/>
+    <link rel="stylesheet" href="css/controlls.css"/>
+    <link rel="stylesheet" href="css/footer.css"/>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <img src="images/logo.svg" alt="Яндекс Дом">
+      </div>
+      <nav class="navigator">
+        <a href="#" class="navigator__link navigator__link_active">Сводка</a>
+        <a href="#" class="navigator__link">Устройства</a>
+        <a href="#" class="navigator__link">Сценарии</a>
+      </nav>
+      <div class="menu">
+        <input id="switcher" type="checkbox">
+        <label class="burger" for="switcher">
+          <label for="switcher" class="burger__item"></label>
+          <label for="switcher" class="burger__item"></label>
+          <label for="switcher" class="burger__item"></label>
+        </label>
+        <nav class="list">
+          <a href="#" class="list__link">Сводка</a>
+          <a href="#" class="list__link">Устройства</a>
+          <a href="#" class="list__link">Сценарии</a>
+        </nav>
+      </div>
+    </div>
+
+    <div class="responsive">
+      <div class="part part__main">
+        <div class="part__head">
+          <label class="title">Главное</label>
+        </div>
+        <div class="part__body">
+          <div class="card card_type_large">
+            <div class="info">
+              <h2 class="info__hello">Привет, Геннадий!</h2>
+              <label class="info__status">Двери и окна закрыты, сигнализация включена.</label>
+              <div class="weather">
+                <div class="weather__cell">
+                  <div class="weather__title">Дома</div>
+                  <div class="weather__temp">+23</div>
+                </div>
+                <div class="weather__cell">
+                  <div class="weather__title">За окном</div>
+                  <div class="weather__temp">+19</div>
+                  <img class="weather__icon" src="images/cloud-drizzle.svg" alt="Яндекс Дом">
+                </div>
+              </div>
+
+            </div>
+            <div class="plan">
+              <div class="card card_type_plan card_active">
+                <div class="card__icon icon__temperature_off"></div>
+                <div class="card__body">
+                  <div class="card__name">Philips Cooler</div>
+                  <div class="card__status">Начнет охлаждать в 16:30</div>
+                </div>
+              </div>
+              <div class="card card_type_plan card_active">
+                <div class="card__icon icon__sun_off"></div>
+                <div class="card__body">
+                  <div class="card__name">Xiaomi Yeelight LED Smart Bulb</div>
+                  <div class="card__status">Включится в 17:00</div>
+                </div>
+              </div>
+              <div class="card card_type_plan card_active">
+                <div class="card__icon icon__sun_off"></div>
+                <div class="card__body">
+                  <div class="card__name">D-Link Omna 180 Cam</div>
+                  <div class="card__status">Включится в 17:00</div>
+                </div>
+              </div>
+              <div class="card card_type_plan card_active">
+                <div class="card__icon icon__temperature_off"></div>
+                <div class="card__body">
+                  <div class="card__name">Elgato Eve Degree Connected</div>
+                  <div class="card__status">Включится в 17:00</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="part part__script">
+        <div class="part__head">
+          <label class="title">Избранные сценарии</label>
+          <div class="pagination">
+            <button class="arrow">
+            </button>
+            <button class="arrow arrow_mirror">
+            </button>
+          </div>
+        </div>
+        <div class="scripts">
+          <div class="script__page">
+            <div class="card card_type_script card_active">
+              <div class="card__icon icon__sun"></div>
+              <div class="card__body">
+                <div class="card__name">Выключить весь свет в доме и во дворе</div>
+              </div>
+            </div>
+            <div class="card card_type_script card_active">
+              <div class="card__icon icon__scheduled"></div>
+              <div class="card__body">
+                <div class="card__name">Я ухожу</div>
+              </div>
+            </div>
+            <div class="card card_type_script card_active">
+              <div class="card__icon icon__sun"></div>
+              <div class="card__body">
+                <div class="card__name">Выключить свет в коридоре</div>
+              </div>
+            </div>
+            <div class="card card_type_script card_active">
+              <div class="card__icon icon__temperature"></div>
+              <div class="card__body">
+                <div class="card__name">Набрать горячую ванну</div>
+                <div class="card__status">Начнётся в 18:00</div>
+              </div>
+            </div>
+            <div class="card card_type_script card_active">
+              <div class="card__icon icon__temperature"></div>
+              <div class="card__body">
+                <div class="card__name">Сделать пол тёплым во всей квартире</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="part part__devices">
+      <div class="part__head">
+        <label class="title">Избранные устройства</label>
+        <div class="filter">
+          <div class="radio-group">
+            <input class="hidden" type="radio" name="filter" id="all" checked/>
+            <label for="all" class="radio-item">
+              <div class="radio-item__text">Все</div>
+            </label>
+            <input class="hidden" type="radio" name="filter" id="kitchen"/>
+            <label for="kitchen" class="radio-item">
+              <div class="radio-item__text">Кухня</div>
+            </label>
+            <input class="hidden" type="radio" name="filter" id="hall"/>
+            <label for="hall" class="radio-item">
+              <div class="radio-item__text">Зал</div>
+            </label>
+            <input class="hidden" type="radio" name="filter" id="light"/>
+            <label for="light" class="radio-item">
+              <div class="radio-item__text">Лампочки</div>
+            </label>
+            <input class="hidden" type="radio" name="filter" id="cam"/>
+            <label for="cam" class="radio-item">
+              <div class="radio-item__text">Камеры</div>
+            </label>
+          </div>
+        </div>
+        <div class="pagination">
+          <button class="arrow">
+          </button>
+          <button class="arrow arrow_mirror arrow_active">
+          </button>
+        </div>
+      </div>
+      <div class="devices">
+        <div class="card card_type_device card_active device_type_light">
+          <div class="card__icon icon__sun"></div>
+          <div class="card__body">
+            <div class="card__name">Xiaomi Yeelight LED Smart Bulb</div>
+            <div class="card__status">Включено</div>
+          </div>
+        </div>
+        <div class="card card_type_device card_active device_type_cam">
+          <div class="card__icon icon__sun_off"></div>
+          <div class="card__body">
+            <div class="card__name">D-Link Omna 180 Cam</div>
+            <div class="card__status">Включится в 17:00</div>
+          </div>
+        </div>
+        <div class="card card_type_device card_active device_type_kitchen">
+          <div class="card__icon icon__temperature_off"></div>
+          <div class="card__body">
+            <div class="card__name">Elgato Eve Degree Connected</div>
+            <div class="card__status">Выключено до 17:00</div>
+          </div>
+        </div>
+        <div class="card card_type_device card_active device_type_cam">
+          <div class="card__icon icon__sun_off"></div>
+          <div class="card__body">
+            <div class="card__name">LIFX Mini Day & Dusk A60 E27</div>
+            <div class="card__status">Включится в 17:00</div>
+          </div>
+        </div>
+        <div class="card card_type_device card_active device_type_hall">
+          <div class="card__icon icon__sun"></div>
+          <div class="card__body">
+            <div class="card__name">Xiaomi Mi Air Purifier 2S</div>
+            <div class="card__status">Включено</div>
+          </div>
+        </div>
+        <div class="card card_type_device card_active device_type_hall">
+          <div class="card__icon icon__sun_off"></div>
+          <div class="card__body">
+            <div class="card__name">Philips Zhirui</div>
+            <div class="card__status">Выключено</div>
+          </div>
+        </div>
+        <div class="card card_type_device card_active device_type_hall">
+          <div class="card__icon icon__temperature_off"></div>
+          <div class="card__body">
+            <div class="card__name">Philips Cooler</div>
+            <div class="card__status">Начнет охлаждать в 16:30</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer__list">
+        <a href="#" class="footer__link">Помощь</a>
+        <a href="#" class="footer__link">Обратная связь</a>
+        <a href="#" class="footer__link">Разработчикам</a>
+        <a href="#" class="footer__link">Условия использования</a>
+      </div>
+      <label class="footer__copy">© 2001–2017  ООО «Яндекс»</label>
+    </footer>
+  </body>
+</html>

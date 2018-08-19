@@ -1,0 +1,51 @@
+html,
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  font-family: sans-serif;
+}
+
+.title {
+  color: #333;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.responsive {
+  display: flex;
+  padding-top: 100px;
+  flex-direction: row;
+}
+
+.part {
+  flex: 1 1 auto;
+}
+
+.part__head {
+  display: flex;
+  margin: 20px 0 20px 0;
+}
+
+.part__body {
+  min-width: 515px;
+}
+
+@media all and (max-width: 1250px) {
+  .responsive {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width:  650px) {
+  .part__body {
+    min-width: auto;
+  }
+}
+
+@media all and (max-width:  500px) {
+  .responsive {
+    padding-top: 75px;
+  }
+}

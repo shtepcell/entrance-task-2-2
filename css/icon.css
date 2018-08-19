@@ -1,0 +1,19 @@
+.icon__temperature {
+  background-image: url('../images/icon_temperature_2.svg');
+}
+
+.icon__temperature_off {
+  background-image: url('../images/icon_temperature.svg');
+}
+
+.icon__sun_off {
+  background-image: url('../images/icon_sun.svg');
+}
+
+.icon__sun {
+  background-image: url('../images/icon_sun_2.svg');
+}
+
+.icon__scheduled {
+  background-image: url('../images/icon_scheduled.svg');
+}

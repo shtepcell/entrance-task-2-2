@@ -1,0 +1,31 @@
+.part__main {
+  margin-left: 40px;
+  margin-right: 26px;
+}
+
+.part__main .card_type_large {
+  display: flex;
+  width: 100%;
+  height: 100%;
+
+  background-image: url('../images/card-background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media all and (max-width: 650px) {
+  .part__main .card_type_large {
+    flex-direction: column;
+  }
+}
+
+@media all and (max-width: 500px) {
+  .part__main {
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .part__main .part__head {
+    display: none;
+  }
+}
