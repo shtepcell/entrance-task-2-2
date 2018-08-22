@@ -1,7 +1,6 @@
 .footer {
   display: flex;
   height: 64px;
-  margin-top: 15px;
   width: 100%;
   position: fixed;
   bottom: 0;
@@ -41,7 +40,7 @@
   justify-content: center;
 }
 
-@media all and (max-height: 756px) {
+@media all and (max-height: 770px) {
   .footer {
     position: inherit;
   }

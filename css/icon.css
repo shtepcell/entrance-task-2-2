@@ -17,3 +17,15 @@
 .icon__scheduled {
   background-image: url('../images/icon_scheduled.svg');
 }
+
+.icon__scroll {
+  background-image: url('../images/arrow-scroll.svg');
+}
+
+.icon__oval {
+  background-image: url('../images/oval.svg');
+}
+
+.icon__cursor {
+  background-image: url('../images/cursor.svg');
+}

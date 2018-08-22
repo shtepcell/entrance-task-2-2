@@ -53,12 +53,16 @@
 }
 
 .radio-item__text {
+  font-size: 13px;
   padding: 7.5px 13px 7.5px 13px;
 }
 
-@media all and (max-width: 710px) {
+@media all and (max-width: 800px) {
   .filter {
     display: none;
+  }
+  .radio-item__text {
+    font-weight: normal;
   }
 }
 

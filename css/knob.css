@@ -1,0 +1,61 @@
+.knob {
+  position: relative;
+  height: 220px; width: 220px;
+}
+
+.knob__border {
+  position: absolute;
+  background-size: contain;
+  z-index: 0;
+  height: 220px; width: 220px;
+}
+
+.knob__mask {
+  position: absolute;
+  width: 0; height: 0;
+  left: 26px;
+  top: 110px;
+  transform: rotate(180deg);
+  border-left: 85px solid transparent;
+  border-right: 85px solid transparent;
+  border-top: 120px solid white;
+  border-radius: 50%;
+}
+
+.knob__control {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  height: 180px; width: 180px;
+  background-color: #FFFEFEFE;
+
+  border-radius: 50%;
+  box-shadow: 0 0 6px 0 rgba(134,121,71,0.45);
+}
+
+.knob__value {
+  position: absolute;
+  width: 220px;
+  text-align: center;
+  top:0;
+  margin-top: 70px;
+  font-family: 'Arial';
+  position: absolute;
+  font-size: 66px;
+  font-weight: bold;
+}
+
+.knob__cursor {
+  position: relative;
+  width: 10px;
+  height: 10px;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  top: 0;
+  left: 85px;
+}
+
+.knob__control {
+  transform: rotateZ(100deg);
+}

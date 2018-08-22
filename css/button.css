@@ -1,0 +1,26 @@
+.button {
+  width: 307px;
+  height: 60px;
+
+  background-color: #fff;
+  border-radius: 20px;
+
+  font-size: 18px;
+  text-align:center;
+  line-height: 60px;
+  font-weight: bold;
+
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.button:first-child {
+  margin-right: 16px;
+}
+
+.button_type_agree {
+  background: #FFD93E;
+}
+.button_type_agree:hover {
+  background: #FFCD00;
+}

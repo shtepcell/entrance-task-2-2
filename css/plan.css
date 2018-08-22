@@ -1,5 +1,6 @@
 .plan {
   display: flex;
+  position: relative;
   flex-direction: column;
   flex-wrap: nowrap;
   overflow-x: scroll;
@@ -9,16 +10,38 @@
   height: 330px;
 }
 
+.scroll-up {
+  z-index: 1;
+  position: absolute;
+  background-color: #F7F7F7;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+
+  width: 200px;
+  height: 40px;
+  bottom: 0;
+}
+
+.scroll-up div {
+  width: 16px;
+  height: 16px;
+  margin: 12px 0 0 90px;
+}
+
 .plan .card {
   margin-right: 20px;
 }
 
-.plan .card:first-child {
+.plan .card:nth-child(2) {
   margin-top: 20px;
 }
 
 @media all and (max-width: 650px) {
-  .plan .card:first-child {
+  .scroll-up {
+    display: none;
+  }
+
+  .plan .card:nth-child(2) {
     margin-top: 0px;
     margin-left: 20px;
   }

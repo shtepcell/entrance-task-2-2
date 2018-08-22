@@ -1,27 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
+<html>
+<head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <link rel="stylesheet" href="css/index.css"/>
-    <link rel="stylesheet" href="css/header.css"/>
-    <link rel="stylesheet" href="css/content.css"/>
-    <link rel="stylesheet" href="css/cards.css"/>
-    <link rel="stylesheet" href="css/footer.css"/>
-  </head>
-  <body>
-    <div class="scripts">
-      <div class="script__page">
-        <div class="card card_size_m"></div>
-        <div class="card card_size_m"></div>
-        <div class="card card_size_m"></div>
-        <div class="card card_size_m"></div>
-        <div class="card card_size_m"></div>
-        <div class="card card_size_m"></div>
-        <div class="card card_size_m"></div>
-        <div class="card card_size_m"></div>
-        <div class="card card_size_m"></div>
-      </div>
-    </div>
-  </body>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        body {
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+
+<div>
+    <?xml version="1.0" encoding="UTF-8"?>
+    <svg id='ticks' width="200px" height="200px" viewBox="0 0 200 200" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <defs>
+            <g id="fon" transform="rotate(135, 100, 100)">
+                <rect x="0" y="0" width="200" height="200" stroke="none" fill="none"/>
+                <circle cx="100" cy="100" r="85" stroke-width="30" fill="none"/>
+            </g>
+            <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="200" height="200" stroke="white">
+                <g id="ruler" stroke-dasharray="267, 500%">
+                    <use xlink:href="#fon"></use>
+                </g>
+            </mask>
+            <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="200" height="200" stroke="white">
+                <g stroke-dasharray="400, 500%">
+                    <use xlink:href="#fon"></use>
+                </g>
+            </mask>
+        </defs>
+        <g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.9921875" stroke-dasharray="2,4">
+
+            <use id="Oval" mask="url(#mask-3)" xlink:href="#fon" stroke="red" ></use>
+            <use id="Oval" mask="url(#mask-2)" xlink:href="#fon" stroke="green"></use>
+        </g>
+    </svg>
+</div>
+<script>
+    let angle;
+    let pressed;
+
+    const ruler = document.getElementById('ruler');
+
+    function getAngle(e) {
+        return (225 - (Math.atan2(100 - e.clientY, e.clientX - 100) / Math.PI * 180) + 360) % 360;
+    }
+    document.body.onmousedown = function(e) {
+        pressed = true;
+        angle = getAngle(e);
+    }
+
+    document.body.onmousemove = function(e) {
+        if (pressed) {
+            angle = getAngle(e);
+            ruler.setAttribute('stroke-dasharray', `${Math.min(angle / 270 * 400, 400)}, 500%`)
+            console.log('angle ---> ', angle);
+        }
+    }
+
+    document.body.onmouseup = function(e) {
+        pressed = false;
+    }
+</script>
+
+</body>
 </html>
