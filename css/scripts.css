@@ -60,11 +60,11 @@
     margin-left: 40px;
   }
 
-  .scripts .card:first-child {
+  .scripts .script__page:first-child .card:first-child {
     margin-left: 40px;
   }
 
-  .scripts .card:last-child {
+  .scripts .script__page:last-child .card:last-child {
     margin-right: 40px;
   }
 
@@ -78,11 +78,11 @@
     margin-left: 20px;
   }
 
-  .scripts .card:first-child {
+  .scripts .script__page:first-child .card:first-child {
     margin-left: 20px;
   }
 
-  .scripts .card:last-child {
+  .scripts .script__page:last-child .card:last-child {
     margin-right: 20px;
   }
 }

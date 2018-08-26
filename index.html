@@ -20,10 +20,26 @@
     <link rel="stylesheet" href="css/slider.css"/>
     <link rel="stylesheet" href="css/footer.css"/>
     <script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery.knob.min.js"></script>
     <title>Яндекс Дом</title>
     <link rel="shortcut icon" href="images/favicon.png" type="image/png">
   </head>
   <body>
+    <div class="mobile-filter">
+      <div class="mobile-filter__body">
+        <div class="mobile-filter__head">Фильтр устройств</div>
+        <div class="mobile-filter__list">
+          <div class="mobile-filter__list-item mobile-filter__list-item_selected" onclick="selectFilter(this, 'all')">Все</div>
+          <div class="mobile-filter__list-item" onclick="selectFilter(this, 'kitchen')">Кухня</div>
+          <div class="mobile-filter__list-item" onclick="selectFilter(this, 'hall')">Зал</div>
+          <div class="mobile-filter__list-item" onclick="selectFilter(this, 'light')">Лампочки</div>
+          <div class="mobile-filter__list-item" onclick="selectFilter(this, 'cam')">Камеры</div>
+        </div>
+      </div>
+      <div class="mobile-filter__action">
+        <div class="button" onclick="closeFilter()">Закрыть</div>
+      </div>
+    </div>
     <div class="popup popup_hidden">
       <div class="popup__body">
         <div class="popup__title">
@@ -72,18 +88,41 @@
             </label>
           </div>
         </div>
-
         <div class="popup__controller controller_type_knob">
           <div class="knob">
-            <div class="knob__border icon__oval">
+            <div class="secret">
+              <input type="text" value="75" class="dial">
             </div>
-            <div class="knob__mask">
+            <div class="knob__border">
+              <?xml version="1.0" encoding="UTF-8"?>
+              <svg id='ticks' width="220px" height="220px" viewBox="0 0 220 220" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <defs>
+                    <g id="fon" transform="rotate(127, 110, 110)">
+                        <rect x="0" y="0" width="220" height="220" stroke="none" fill="none"/>
+                        <circle cx="110" cy="110" r="100" stroke-width="20" fill="none"/>
+                    </g>
+                    <mask id="mask-2" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="220" height="220" stroke="white">
+                        <g id="ruler" stroke-dasharray="502, 500%">
+                            <use xlink:href="#fon"></use>
+                        </g>
+                    </mask>
+                    <mask id="mask-3" maskContentUnits="userSpaceOnUse" maskUnits="objectBoundingBox" x="0" y="0" width="220" height="220" stroke="white">
+                        <g stroke-dasharray="502, 500%">
+                            <use xlink:href="#fon"></use>
+                        </g>
+                    </mask>
+                </defs>
+                  <g id="Final" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" opacity="0.9" stroke-dasharray="1,4">
+                      <use id="Oval" mask="url(#mask-3)" xlink:href="#fon" stroke="grey" ></use>
+                      <use id="Oval" mask="url(#mask-2)" xlink:href="#fon" stroke="#F5A623"></use>
+                  </g>
+              </svg>
             </div>
-            <div class="knob__control">
+            <div class="knob__control" id="krutilka">
               <div class="knob__cursor icon__cursor">
               </div>
             </div>
-            <div class="knob__value">+23</div>
+            <div class="knob__value" id="temp">+23</div>
           </div>
           <input class="slider slider_type_temp" type="range">
           <input class="slider slider_type_bright" type="range">
@@ -182,14 +221,18 @@
         <div class="part part__script">
           <div class="part__head">
             <label class="title">Избранные сценарии</label>
-            <div class="pagination">
-              <button class="arrow">
-              </button>
-              <button class="arrow arrow_mirror">
-              </button>
+            <div class="pagination pagination__scripts">
+              <div class="arrow" onclick="scrollBack('scripts')">
+                <img class="icon__disabled" src="images/arrow-disabled.svg">
+                <img class="icon__active" src="images/arrow-active.svg">
+              </div>
+              <div class="arrow arrow_mirror" onclick="scrollForward('scripts')">
+                <img class="icon__disabled" src="images/arrow-disabled.svg">
+                <img class="icon__active" src="images/arrow-active.svg">
+              </div>
             </div>
           </div>
-          <div class="scripts">
+          <div class="scripts" onscroll="check(this, 'scripts')">
             <div class="script__page">
               <div class="card card_type_script card_active">
                 <div class="card__icon icon__sun"></div>
@@ -230,6 +273,10 @@
       <div class="part part__devices">
         <div class="part__head">
           <label class="title">Избранные устройства</label>
+          <div class="filter__switcher" onclick="openFilter()">
+            <div class="filter__choose">Все</div>
+            <div class="filter__icon"></div>
+          </div>
           <div class="filter">
             <div class="radio-group">
               <input class="hidden" type="radio" name="filter" id="all" checked/>
@@ -254,14 +301,19 @@
               </label>
             </div>
           </div>
-          <div class="pagination">
-            <button class="arrow">
-            </button>
-            <button class="arrow arrow_mirror arrow_active">
-            </button>
+          <div class="pagination pagination__devices">
+            <div class="arrow" onclick="scrollBack('devices')">
+              <img class="icon__disabled" src="images/arrow-disabled.svg">
+              <img class="icon__active" src="images/arrow-active.svg">
+            </div>
+            <div class="arrow arrow_mirror arrow_active" onclick="scrollForward('devices')">
+              <img class="icon__disabled" src="images/arrow-disabled.svg">
+              <img class="icon__active" src="images/arrow-active.svg">
+            </div>
           </div>
         </div>
-        <div class="devices">
+
+        <div class="devices" onscroll="check(this, 'devices')">
           <div class="card card_type_device card_active device_type_light" onclick="showPopup(this, 'sun', 'light')">
             <div class="card__icon icon__sun"></div>
             <div class="card__body">
@@ -323,7 +375,7 @@
         <label class="footer__copy">© 2001–2017  ООО «Яндекс»</label>
       </footer>
     </div>
-
   </body>
   <script type="text/javascript" src="js/index.js"></script>
+  <script type="text/javascript" src="js/knob.js"></script>
 </html>

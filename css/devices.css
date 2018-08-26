@@ -11,6 +11,7 @@
 }
 
 .part__devices .part__head {
+  position: relative;
   margin-left: 40px;
   margin-right: 40px;
 }

@@ -106,7 +106,6 @@
   background-image: linear-gradient(90deg, #068FFF 2%, #FFD800 51%, #F76B1C 100%);
 }
 
-
 .slider_type_bright::-webkit-slider-runnable-track {
   background-image: linear-gradient(85deg, #FFE682 2%, #FF9E00 98%);
 }
@@ -123,11 +122,10 @@
   background-image: linear-gradient(85deg, #FFE682 2%, #FF9E00 98%);
 }
 
-
 .slider_type_temp::before {
   content: '-10';
   position: absolute;
-  margin-left: 20px;
+  margin-left: 15px;
   color: #fff;
   font-size: 18px;
   margin-top: 18px;
@@ -140,7 +138,7 @@
   color: #fff;
   font-size: 18px;
   margin-top: 18px;
-  margin-right: 20px;
+  margin-right: 15px;
 }
 
 

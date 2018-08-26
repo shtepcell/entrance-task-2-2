@@ -1,6 +1,13 @@
 .knob {
+  cursor: pointer;
   position: relative;
   height: 220px; width: 220px;
+}
+
+.knob .secret {
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
 }
 
 .knob__border {
@@ -54,8 +61,4 @@
 
   top: 0;
   left: 85px;
-}
-
-.knob__control {
-  transform: rotateZ(100deg);
 }
